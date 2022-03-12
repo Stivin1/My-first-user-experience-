@@ -1,0 +1,40 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+body
+{
+  background-color: #d2d2d6;
+}
+
+.container-base{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.container-info{
+  width: 700px;
+  height: 100vh;
+  margin-top: 46px;
+  display: inline-block;
+}
+
+.info p{
+  height: 35px;
+  width: 500px;
+  margin-top: 150px;
+  margin-left: 120px;
+  font-size: 32px;
+  color: #626567;
+}
+
+.info-Successful p{
+  width: 800px;
+  margin-top: 20px;
+  color: #7B7D7D;
+  margin-left: 120px;
+}

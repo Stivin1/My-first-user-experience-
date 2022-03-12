@@ -1,0 +1,18 @@
+﻿@model OpenSourceEnity.Models.ModelViews.EntityViews.Front
+
+@{
+    ViewData["Title"] = "GetFrontMenu";
+}
+
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><a href="@Url.Action("Index","Front")">OpenSource</a></li>
+                <li><input type="text" name="" value=""></li>
+                <li><a href="@Url.Action("Index","Authorization")">Вход</a></li>
+                <li><a href="@Url.Action("Index","Registration","")">Регистрация</a></li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>

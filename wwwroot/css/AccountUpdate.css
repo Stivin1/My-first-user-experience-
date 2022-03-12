@@ -1,0 +1,136 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-size: 12px;
+  font-family:sans-serif;
+}
+
+body
+{
+  background-color: #c7c8c9;
+}
+
+.container-home-base{
+  width: 100%;
+  height: 800px;
+  display: inline-block;
+}
+
+.info{
+  font-size: 24px;
+  margin-left: -10px;
+  width: 300px;
+}
+
+.container-location{
+  width: 1150px;
+  height: 760px;
+  margin-top: 10px;
+  margin-left: -10px;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  background-color: #f5f6fa;
+  border: 2px solid #bdbdbd;
+}
+
+.container-info
+{
+  margin-left: 50px;
+}
+
+.container-base-participant{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.container-info-participant{
+  margin-bottom: 40px;
+}
+
+.container-info-participant label{
+  font-size: 24px;
+}
+
+.container-label{
+  margin-bottom: 8px;
+}
+
+.container-part-input input[type="text"]{
+  margin-top: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 250px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.container-part-input input[type="date"]{
+  margin-top: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 250px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.container-part-input select{
+  margin-top: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 250px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.container-reg input[type="submit"]{
+  margin-top: 25px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 3px;
+  background-color: #38A238;
+  border: 2px solid #38A238;
+  color: white;
+  cursor: pointer;
+}
+
+
+.container-base-account{
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.container-info-account{
+  margin-bottom: 40px;
+}
+
+.container-home-menu{
+  margin-top: 48px;
+  height: 100%;
+  display: inline-block;
+}
+
+.container-home{
+  width: 400px;
+  height: 100vh;
+  display: flex;
+}
+
+.base{
+  display: flex;
+}
+
+.information{
+  margin-top: 84px;
+  width: 100px;
+}

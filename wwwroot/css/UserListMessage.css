@@ -1,0 +1,151 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+body
+{
+  background-color: #c7c8c9;
+}
+
+
+.container-home-menu{
+  margin-top: 48px;
+  height: 100%;
+  display: inline-block;
+}
+
+.container-home-base{
+  width: 100%;
+  height: 800px;
+}
+
+.base{
+  display: flex;
+}
+
+.info{
+  margin-top: 84px;
+  font-size: 24px;
+  margin-left: 59px;
+  width: 300px;
+}
+
+.container-list-user{
+  width: 1150px;
+  height: 767px;
+  margin-top: 10px;
+  margin-left: 60px;
+  background-color: #f5f6fa;
+  border: 2px solid #bdbdbd;
+  color: black;
+  border-radius: 5px;
+}
+
+
+.container-list-user-form{
+  width: 1150px;
+  height: 100px;
+  display: flex;
+}
+
+.style-location{
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.container-part-input input[type="text"] {
+    margin-top: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 200px;
+    border-radius: 3px;
+    border: 2px solid #a7a7a8;
+    outline: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.container-reg input[type="submit"]{
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 17px;
+  border-radius: 3px;
+  background-color: #38A238;
+  border: 2px solid #38A238;
+  color: white;
+  cursor: pointer;
+}
+
+.message-user-input
+{
+  color: white;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 0px;
+  background-color: #38A238;
+  border-radius: 3px;
+}
+
+.message-user-input:hover
+{
+  background-color: #369F36;
+}
+
+.container-reg input[type="submit"]:hover
+{
+  background-color: #369F36;
+}
+
+table
+{
+  table-layout:auto;
+  word-break: break-all;
+  border-spacing: 10px 20px;
+}
+
+th
+{
+  padding: 10px;
+}
+
+td
+{
+  text-align: left;
+  padding: 10px;
+}
+
+td > a
+{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin-left: 5px;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    float: left;
+    padding: 8px 16px;
+    color: black;
+    margin-left: 0px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+ul.pagination li a:hover {
+    background-color: #4CAF50;
+    color: black;
+    border-radius: 2px;
+}

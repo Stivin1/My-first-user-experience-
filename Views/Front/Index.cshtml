@@ -1,0 +1,54 @@
+﻿
+@model OpenSourceEnity.Models.ModelViews.EntityViews.Front
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <link rel="stylesheet" href="~/css/Front.css">
+    <title></title>
+</head>
+<body>
+    @await Html.PartialAsync("~/Views/FrontMenu/GetFrontMenu.cshtml")
+    <div class="front-base-element">
+        <div class="front-base-information">
+            <div class="information">
+                <div class="information-label-position">
+                    <label for="">OpenSource</label>
+                </div>
+                <div class="information-label">
+                    <label for="">Зарегистрированных участников: @Model.Count </label>
+                </div>
+            </div>
+        </div>
+        <div class="front-base-registration-fixed">
+            <div class="registration-fixed">
+                <div class="registration-fixed-email">
+                    @using (Html.BeginForm("Index", "Front", FormMethod.Post))
+                    {
+                        <div class="Validation" asp-validation-summary="ModelOnly"></div>
+
+                        <div class="registration-lable">
+                            <label for="">Укажите адрес электронной почты</label>
+                        </div>
+                        <div class="registration-span-email">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="registration-email">
+                            <input type="text" name="Email" value="">
+                        </div>
+                        <div class="registration-submit">
+                            <input type="submit" name="" value="Продолжить">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

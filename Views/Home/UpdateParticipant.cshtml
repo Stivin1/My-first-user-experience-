@@ -1,0 +1,115 @@
+﻿
+@model OpenSourceEnity.Models.ModelViews.EntityViews.UpdateParticipant
+
+@{
+    ViewData["Title"] = "UpdateParticipant";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <link rel="stylesheet" href="~/css/ParticipantUpdate.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><a href="@Url.ActionLink("Index","Home")">OpenSource</a></li>
+                <li><input type="text" name="" value=""></li>
+                <li class="container-li">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "container-thref-a" })</li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base">
+        <div class="container-home">
+            <div class="container-home-menu">
+                <nav>
+                    <ul>
+                        <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.UserId })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="information">
+            <div class="container-home-base">
+                <div class="info">
+                    Обновить пользовательские данные
+                </div>
+                <div class="container-location">
+                    <div class="container-base-participant">
+                        @using (Html.BeginForm("UpdateParticipant","Home", FormMethod.Post))
+                        {
+                            @Html.Hidden("UserId",Model.UserId);
+
+                        <div class="container-info-participant">
+                            <label for="">Обновить пользовательские данные</label>
+                        </div>
+                        <div class="container-participant">
+                            <div class="Validation" asp-validation-summary="ModelOnly"></div>
+                            <div class="container-label">
+                                @Html.Label("MiddleName", "Фамилия")
+                                <span asp-validation-for="MiddleName" style="color:red"></span>
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("MiddleName", Model.Participant?.MiddleName, new { type = "text" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("Name", "Имя")
+                                <span asp-validation-for="Name" style="color:red"></span><br />
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("Name", Model.Participant?.Name, new { type = "text" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("LastName", "Отчество")
+                                <span asp-validation-for="LastName" style="color:red"></span><br />
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("LastName", Model.Participant?.LastName, new { type = "text" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("DateAge", "Дата рождения")
+                            </div>
+                            <div class="container-part-input">
+                                <input type="date" name="DateAge" value="@Model.Participant?.DateAge">
+                            </div>
+                            <div class="container-label">
+                                @Html.Label(null, "Пол")
+                            </div>
+                            <div class="container-part-select">
+                                <select asp-for="PolId" asp-items="@Model?.SelectListPolItems">
+                                </select>
+                            </div>
+                            <div class="container-label">
+                                @Html.Label(null, "Страна")
+                            </div>
+                            <div class="container-part-select">
+                                <select asp-for="CountryId" asp-items="@Model?.SelectListCountryItems">
+                                </select>
+                            </div>
+                            <div class="container-reg">
+                                <input type="submit" name="" value="Обновить">
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

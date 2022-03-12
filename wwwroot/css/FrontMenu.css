@@ -1,0 +1,46 @@
+.list-navigation >  nav{
+  position: fixed;
+}
+
+.list-navigation >  nav{
+  background-color: #2d2d2e;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 11px;
+  font-family: sans-serif;
+
+}
+
+.list-navigation >  nav ul{
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-left: 400px;
+}
+
+.list-navigation >  nav ul > li{
+  margin-left: 10px;
+  margin-right: -5px;
+  list-style-type: none;
+}
+
+.list-navigation >  nav ul > li > a{
+  padding: 8.8px 20px 8.8px 20px;
+  color: white;
+  background-color: #3E72A4;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.list-navigation >  nav ul > li > a:hover{
+  background-color: #2874A6;
+}
+
+.list-navigation >  nav ul > li > input{
+  margin-top: -10px;
+  padding: 6px;
+  width: 300px;
+  border-radius: 4px;
+  border: solid 1px white;
+  outline-color: #b8b206;
+}

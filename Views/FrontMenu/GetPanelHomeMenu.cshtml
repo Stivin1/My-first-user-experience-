@@ -1,0 +1,25 @@
+﻿@model OpenSourceEnity.Models.ModelViews.EntityViews.Home
+
+@{
+    ViewData["Title"] = "GetPanelHomeMenu";
+}
+
+<div class="container-home">
+    <div class="container-home-menu">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.User.Id })</li>
+                <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.User.Id })</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+

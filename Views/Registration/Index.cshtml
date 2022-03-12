@@ -1,0 +1,138 @@
+﻿@model OpenSourceEnity.Models.ModelViews.EntityViews.Registration
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+    <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="~/css/FrontMenu.css">
+        <link rel="stylesheet" href="~/css/Registration.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="list-navigation">
+            <nav>
+                <ul>
+                    <li><a href="@Url.ActionLink("Index","Front")">OpenSource</a></li>
+                    <li><input type = "text" name="" value=""></li>
+                    <li><a href="@Url.Action("Index","Authorization")">Вход</a></li>
+                    <li class="container-li"><a class="container-thref-a" href="@Url.ActionLink("Index","Registration")">Регистрация</a></li>
+                    <li><a href="#">О сайте</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        @using (Html.BeginForm("Index", "Registration", FormMethod.Post))
+        {
+            <div class="Validation" asp-validation-summary="ModelOnly"></div>
+            <div class="registration-base-element">
+                <div class="registration-base-participant">
+                    <div class="registration-participant">
+                        <div class="registration-information">
+                            @Html.Label("Регистрационные данные участника")
+                        </div>
+                        <div class="registration-participant-label">
+                            @Html.Label("Фамилия")
+                        </div>
+                        <div class="registration-participant-span">
+                            <span asp-validation-for="MiddleName"></span>
+                        </div>
+                        <div class="registration-participant-input">
+                            @Html.TextBox("MiddleName", null, new { type = "text" })
+                        </div>
+                        <div class="registration-participant-label">
+                            @Html.Label("Имя")
+                        </div>
+                        <div class="registration-participant-span">
+                            <span asp-validation-for="Name"></span>
+                        </div>
+                        <div class="registration-participant-input">
+                            @Html.TextBox("Name", null, format: "text")
+                        </div>
+                        <div class="registration-participant-label">
+                            @Html.Label("Отчество")
+                        </div>
+                        <div class="registration-participant-span">
+                            <span asp-validation-for="LastName"></span>
+                        </div>
+                        <div class="registration-participant-input">
+                            @Html.TextBox("LastName", null, new { type = "text" })
+                        </div>
+                        <div class="registration-participant-label">
+                            @Html.Label("Дата рождения")
+                        </div>
+                        <div class="registration-participant-span">
+                            <span asp-validation-for="DateAge"></span>
+                        </div>
+                        <div class="registration-participant-input-date">
+                            <input type="date" name="DateAge" value="">
+                        </div>
+                        <div class="registration-participant-label">
+                            @Html.Label("Пол")
+                        </div>
+                        <div class="registration-participant-span">
+                            <span></span>
+                        </div>
+                        <div class="registration-participant-select-pol">
+                            <select asp-for="PolId" asp-items="@Model.SelectListPolItems" ></select>
+                        </div>
+                        <div class="registration-participant-label">
+                            @Html.Label("Страна")
+                        </div>
+                        <div class="registration-participant-span">
+                            <span></span>
+                        </div>
+                        <div class="registration-participant-select-country">
+                            <select asp-for="CountryId" asp-items="@Model.SelectListCountryItems"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-base-user">
+                    <div class="registration-user">
+                        <div class="registration-information-user">
+                            @Html.Label("Регистрационные данные пользователя")
+                        </div>
+                        <div class="registration-user-label">
+                            @Html.Label("Email")
+                        </div>
+                        <div class="registration-user-span">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="registration-user-input">
+                            @Html.TextBox("Email", Model.Email, new { type = "text" })
+                            <div class="registration-user-input-select-domain">
+                                <select asp-for="@Model.DomensId" asp-items="@Model.SelectListDomensItems" >
+                                </select>
+                            </div>
+                        </div>
+                        <div class="registration-user-label">
+                            @Html.Label("Имя пользователя")
+                        </div>
+                        <div class="registration-user-span">
+                            <span asp-validation-for="UserName"></span>
+                        </div>
+                        <div class="registration-user-input registration-user-input-inline-name">
+                            @Html.TextBox("UserName", null, new { type = "text" })
+                        </div>
+                        <div class="registration-user-label">
+                            @Html.Label("Пароль")
+                        </div>
+                        <div class="registration-user-span">
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="registration-user-input registration-user-input-inline-password">
+                            @Html.TextBox("Password", null, new { type = "text" })
+                        </div>
+                    </div>
+                    <div class="registration-user-base-input">
+                        <input type="submit" name="" value="Регистрация">
+                    </div>
+                </div>
+            </div>
+        }
+        </body>
+    </html>
+

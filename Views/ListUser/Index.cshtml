@@ -1,0 +1,143 @@
+﻿
+@model OpenSourceEnity.Models.ModelViews.EntityViews.ListUser
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <link rel="stylesheet" href="~/css/ListUser.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><a href="@Url.ActionLink("Index","Home")">OpenSource</a></li>
+                <li><input type="text" name="" value=""></li>
+                <li class="container-li">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "container-thref-a" })</li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base">
+        <div class="container-home">
+            <div class="container-home-menu">
+                <nav>
+                    <ul>
+                        <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.UserId})</li>
+                        <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.UserId })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="information">
+            <div class="container-home-base">
+                <div class="info">
+                    Список пользователей
+                </div>
+                <div class="container-list-user">
+                    @using (Html.BeginForm("Index","ListUser", FormMethod.Get))
+                    {
+                        @Html.Hidden("UserId",Model.UserId)
+                        <div class="container-list-user-form">
+                            <div class="style-location">
+                                <div class="">
+                                    @Html.Label("Фамилия")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("MiddleName", null, new { type="text" })
+                                </div>
+                            </div>
+                            <div class="style-location">
+                                <div class="">
+                                    @Html.Label("Имя")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("Name", null, new { type="text" })
+                                </div>
+                            </div>
+                            <div class="style-location">
+                                <div class="">
+                                    @Html.Label("Отчество")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("LastName", null, new { type="text" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-reg">
+                            <input type="submit" name="" value="Найти">
+                        </div>
+                    }
+                <div class="">
+                    <table style="">
+                        @{
+
+                            <tr>
+                                <th>@Html.ActionLink("Фамилия","Index","ListUser",new { UserId = Model.UserId,  sorting = Model.listParticiapntSorting.MiddleName })</th>
+                                <th>@Html.ActionLink("Имя", "Index", "ListUser", new { UserId = Model.UserId, sorting = Model.listParticiapntSorting.Name })</th>
+                                <th>@Html.ActionLink("Отчество", "Index", "ListUser", new { UserId = Model.UserId, sorting = Model.listParticiapntSorting.LastName })</th>
+                                <th>Имя пользователя</th>
+                                <th>Дата создания</th>
+                                <th>Обновить учетные данные</th>
+                            </tr>
+                            foreach (var list in Model.Participants)
+                            {
+                                <tr>
+                                    <td>@list.MiddleName</td>
+                                    <td>@list.Name</td>
+                                    <td>@list.LastName</td>
+                                    <td>@list.User.UserName</td>
+                                    <td>@list.User.DateChanges</td>
+                                    <td><a class="update-account-input" href="@Url.ActionLink("UserUpdate","Home", new { UserId = list.User.Id})">Изменить</a></td>
+                                </tr>
+                            }
+
+                        }
+                    </table>
+                    
+                    <ul class="pagination">
+                        @{
+                            for (int i = 1; i < Model.ListUserPagination.CountPage; i++)
+                            {
+                                if (Model.ListUserPagination.BeforePage)
+                                {
+                                    <li>
+                                        <a asp-route-page="@i"
+                                           asp-route-sorting="@Model.listParticiapntSorting.Default"
+                                           asp-route-UserId="@Model.UserId">@i</a>
+                                    </li>
+                                }
+                                if (Model.ListUserPagination.AfterPage)
+                                {
+                                    <li>
+                                        <a asp-route-page="@i"
+                                           asp-route-sorting="@Model.listParticiapntSorting.Default"
+                                           asp-route-UserId="@Model.UserId">@i</a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+

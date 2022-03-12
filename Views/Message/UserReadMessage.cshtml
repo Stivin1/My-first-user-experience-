@@ -1,0 +1,87 @@
+﻿
+@model OpenSourceEnity.Models.ModelViews.EntityViews.UserReadMessage
+
+@{
+    ViewData["Title"] = "UserReadMessage";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <link rel="stylesheet" href="~/css/UserMessages.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><a href="@Url.ActionLink("Index","Home")">OpenSource</a></li>
+                <li><input type="text" name="" value=""></li>
+                <li class="container-li">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "container-thref-a" })</li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base">
+        <div class="container-home">
+            <div class="container-home-menu">
+                <nav>
+                    <ul>
+                        <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.UserId })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="information">
+            <div class="container-home-base">
+                <div class="info">
+                    Сообщение
+                </div>
+                <div class="container-location">
+                    <div class="container-base-participant">
+                        <div class="container-participant">
+                            @{
+                                <div class="container-part-input">
+                                    @if (Model.UserId != Model.UserRecipientId)
+                                    {
+                                        <div class="container-label">
+                                            @Html.Label("Направлено пользователю")
+                                        </div>
+                                        <input type="text" name="" value="@Model.UserRecipienName" readonly>
+                                    }
+                                    else
+                                    {
+                                        <div class="container-label">
+                                            @Html.Label("Получено от пользователя")
+                                        </div>
+                                        <input type="text" name="" value="@Model.UserDonorName" readonly>
+                                    }
+                                </div>
+                                <div class="container-label">
+                                    @Html.Label("Текст сообщения");
+                                </div>
+                                <div class="container-message-input">
+                                    <textarea type="textarea" name="name" rows="8" cols="80" readonly>@Model.Text</textarea>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+﻿@model OpenSourceEnity.Models.ModelViews.EntityViews.Home
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <link rel="stylesheet" href="~/css/Home.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><a href="@Url.ActionLink("Index","Home")">OpenSource</a></li>
+                <li><input type="text" name="" value=""></li>
+                <li class="container-li">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "container-thref-a" })</li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base">
+        <div class="container-home">
+            <div class="container-home-menu">
+                <nav>
+                    <ul>
+                        <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.User.Id })</li>
+                        <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.User.Id })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="information">
+            <div class="container-home-base">
+                <div class="info">
+                    Моя страница
+                </div>
+                <div class="container-location">
+                    <div class="container-base-participant">
+                        <div class="container-info-participant">
+                            @Html.Label("Пользовательские данные")
+                        </div>
+                        <div class="container-participant">
+                            <div class="container-label">
+                                @Html.Label("Фамилия")
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("MiddleName", Model.Participant.MiddleName, null, new { @readonly = "readonly" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("Имя")
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("Name", Model.Participant.Name, null, new { @readonly = "readonly" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("Отчество")
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("LastName", Model.Participant.LastName, null, new { @readonly = "readonly" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("Дата рождения")
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("DateAge", Model.Participant.DateAge, null, new { @readonly = "readonly" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("Пол")
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("PolId", Model.Participant.Pol.Name, null, new { @readonly = "readonly" })
+                            </div>
+                            <div class="container-label">
+                                @Html.Label("Страна")
+                            </div>
+                            <div class="container-part-input">
+                                @Html.TextBox("CountryId", Model.Participant.Country.Name, null, new { @readonly = "readonly" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-base-account">
+                        <div class="container-account">
+                            <div class="container-info-account">
+                                @Html.Label("Учетные данные")
+                            </div>
+                            <div class="container-account">
+                                <div class="container-label">
+                                    @Html.Label("Email")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("Email", Model.User.Email, null, new { @readonly = "readonly" })
+                                </div>
+                                <div class="container-label">
+                                    @Html.Label("Имя пользователя")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("UserName", Model.User.UserName, null, new { @readonly = "readonly" })
+                                </div>
+                                <div class="container-label">
+                                    @Html.Label("Дата создания аккаунта")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("DateCreate", Model.User.DateCreate, null, new { @readonly = "readonly" })
+                                </div>
+                                <div class="container-label">
+                                    @Html.Label("Дата изменения аккаунта")
+                                </div>
+                                <div class="container-part-input">
+                                    @Html.TextBox("DateChanges", Model.User.DateChanges, null, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

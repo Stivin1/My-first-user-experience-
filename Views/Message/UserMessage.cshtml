@@ -1,0 +1,100 @@
+﻿
+@model OpenSourceEnity.Models.ModelViews.EntityViews.UserMessage
+
+@{
+    ViewData["Title"] = "UserMessage";
+}
+
+    <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="~/css/FrontMenu.css">
+        <link rel="stylesheet" href="~/css/UserMessage.css">
+        <link rel="stylesheet" href="~/css/HomeMenu.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="list-navigation">
+            <nav>
+                <ul>
+                    <li><a href="@Url.ActionLink("Index","Home")">OpenSource</a></li>
+                    <li><input type="text" name="" value=""></li>
+                    <li class="container-li">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "container-thref-a" })</li>
+                    <li><a href="#">О сайте</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="base">
+            <div class="container-home">
+                <div class="container-home-menu">
+                    <nav>
+                        <ul>
+                            <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.UserId })</li>
+                            <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.UserId })</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="information">
+                <div class="container-home-base">
+                    <div class="info">
+                        Отправить сообщение
+                    </div>
+                    <div class="container-location">
+                        <div class="container-base-participant">
+                            <div class="container-participant">
+                                @using (Html.BeginForm("UserMessage", "Message", FormMethod.Post))
+                                {
+                                    <div class="Validation" asp-validation-summary="ModelOnly"></div>
+
+                                    @Html.Hidden("UserId", Model.UserId)
+                                    @Html.Hidden("UserIdRecipient", Model.UserIdRecipient)
+
+                                    <div class="container-label">
+                                        @Html.Label("Имя пользователя отправителя")
+                                    </div>
+                                    <div class="container-part-input">
+                                        <input type="text" name="" value="@Model.UserName" readonly>
+                                    </div>
+                                    <div class="container-label">
+                                        @Html.Label("Имя пользователя получателя")
+                                    </div>
+                                    <div class="container-part-input">
+                                        <input type="text" name="" value="@Model.UserNameRecipient" readonly>
+                                    </div>
+                                    <div class="container-label">
+                                        @Html.Label("Тема сообщения")
+                                        <span asp-validation-for="Theme" style="color:red"></span><br />
+                                    </div>
+                                    <div class="container-part-input">
+                                        @Html.TextBox("Theme",null, format: "text")
+                                    </div>
+                                    <div class="container-label">
+                                        @Html.Label("Сообщение")
+                                        <span asp-validation-for="Text" style="color:red"></span><br />
+                                    </div>
+                                    <div class="container-message-input">
+                                        <textarea type="textarea" name="Text" rows="8" cols="80"></textarea>
+                                    </div>
+                                    <div class="container-reg">
+                                        <input type="submit" name="" value="Отправить сообщение">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+

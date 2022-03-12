@@ -1,0 +1,83 @@
+﻿
+@model OpenSourceEnity.Models.ModelViews.EntityViews.TeamCreate
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <link rel="stylesheet" href="~/css/GroupAppend.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><a href="@Url.ActionLink("Index","Home")">OpenSource</a></li>
+                <li><input type="text" name="" value=""></li>
+                <li class="container-li">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "container-thref-a" })</li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base">
+        <div class="container-home">
+            <div class="container-home-menu">
+                <nav>
+                    <ul>
+                        <li>@Html.ActionLink("Моя страница", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Список пользователей", "Index", "ListUser", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль пользователю", "RoleAppendUser", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу пользователю", "TeamUserCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить учетные данные", "UserUpdate", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Обновить пользовательские данные", "UpdateParticipant", "Home", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить роль", "RoleCreate", "Role", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Добавить группу", "TeamCreate", "Team", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Отправить сообщения", "UserListMessage", "Message", new { UserId = Model.UserId })</li>
+                        <li>@Html.ActionLink("Прочитать сообщения", "ReceivingMessage", "Message", new { UserId = Model.UserId })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="information">
+            <div class="container-home-base">
+                <div class="info">
+                    Добавить группу
+                </div>
+                <div class="container-location">
+                    <div class="container-base-account">
+                        <div class="container-account">
+                            <div class="container-info-account">
+                                <label for="">Добавить группу</label>
+                            </div>
+                            <div class="container-account">
+                                <form asp-action="TeamCreate" asp-controller="Team" method="post">
+                                    <div class="Validation" asp-validation-summary="ModelOnly"></div>
+                                    @Html.Hidden("UserId",Model.UserId)
+                                    <div class="container-label">
+                                        <label for="">Наименование группы</label>
+                                        <span asp-validation-for="Name" style="color:red"></span><br />
+                                    </div>
+                                    <div class="container-part-input">
+                                        <input type="text" name="Name" value="" >
+                                    </div>
+                                    <div class="">
+                                        <div class="container-reg">
+                                            <input type="submit" name="" value="Добавить роль">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

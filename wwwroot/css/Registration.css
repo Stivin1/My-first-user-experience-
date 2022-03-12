@@ -1,0 +1,203 @@
+*{
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0px;
+  font-size: 12px;
+  font-family:sans-serif;
+}
+
+.registration-base-element{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: inline-flex;
+}
+
+.registration-base-participant{
+  width: 400px;
+  height: 100%;
+}
+
+.registration-base-user{
+  width: 100%;
+  height: 100%;
+}
+
+.registration-participant > .registration-information{
+  margin-bottom: 50px;
+}
+
+.registration-information > label{
+  font-size: 24px;
+}
+
+.registration-base-participant > .registration-participant{
+  margin-top: 120px;
+  margin-left: 150px;
+  width: 500px;
+  height: 500px;
+  display: block;
+}
+
+.registration-participant > .registration-participant-label{
+  margin-bottom: 5px;
+}
+
+.registration-participant > .registration-participant-span{
+  margin-bottom: 5px;
+  color:red;
+}
+
+.registration-participant-input  input{
+  margin-top: 2px;
+  padding-bottom: 4.5px;
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 250px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 9px;
+}
+
+.registration-participant-input-date > input{
+  margin-top: 2px;
+  padding-bottom: 4.5px;
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 250px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 9px;
+}
+
+.registration-participant-select-pol > select{
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 150px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.registration-participant-select-country > select{
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 150px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+
+.registration-user > .registration-information-user{
+  margin-bottom: 46px;
+}
+
+.registration-information-user > label{
+  font-size: 24px;
+}
+
+.registration-base-user > .registration-user{
+  margin-top: 120px;
+  margin-left: 190px;
+  width: 500px;
+  height: 500px;
+  display: block;
+}
+
+.registration-user > .registration-user-label{
+  margin-bottom: 5px;
+}
+
+.registration-user > .registration-user-span {
+    margin-bottom: 5px;
+    color: red;
+}
+
+.registration-user-input input{
+  margin-top: 2px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 250px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 9px;
+}
+
+.registration-user-input-inline-name input{
+  width: 340px;
+}
+
+.registration-user-input-inline-password input{
+  width: 340px;
+}
+
+.registration-user-select-pol > select{
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 150px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.registration-user-select-country > select{
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 150px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.registration-user-base-input > input{
+  margin-top: -195px;
+  margin-left: 190px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 3px;
+  background-color: #2dad3a;
+  border: 2px solid #2dad3a;
+  color: white;
+  cursor: pointer;
+}
+
+.registration-user-base-input > input:hover{
+  background-color: #24a631;
+  border: 2px solid #24a631;
+}
+
+
+.registration-user-input-select-domain{
+  display: inline-flex;
+}
+
+.registration-user-input-select-domain > select{
+  margin-top: 5px;
+  padding-top: 3.9px;
+  padding-bottom: 3.6px;
+  width: 81px;
+  border-radius: 3px;
+  border: 2px solid #a7a7a8;
+  outline: none;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,56 @@
+﻿@model OpenSourceEnity.Models.ModelViews.EntityViews.Authorization
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="~/css/FrontMenu.css">
+        <link rel="stylesheet" href="~/css/Authorization.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="list-navigation">
+            <nav>
+                <ul>
+                    <li><a href="@Url.ActionLink("Index","Front")">OpenSource</a></li>
+                    <li><input type="text" name="" value=""></li>
+                    <li><a href="@Url.Action("Index","Authorization")">Вход</a></li>
+                    <li><a class="container-thref-a" href="@Url.ActionLink("Index","Registration")">Регистрация</a></li>
+                    <li><a href="#">О сайте</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container-base">
+            @using (Html.BeginForm("Index", "Authorization", FormMethod.Post))
+            {
+                <div class="form-Authorization">
+                    <div class="Validation" asp-validation-summary="ModelOnly"></div>
+                    <div class="information">
+                        @Html.Label("Email", "Авторизация")
+                    </div>
+                    <div class="">
+                        @Html.Label("Email", "Email")
+                        <span asp-validation-for="Email" style="color:red"></span>
+                    </div>
+                    <div class="">
+                        @Html.TextBox("Email", null, "text")
+                    </div>
+                    <div class="">
+                        @Html.Label("Password", "Пароль")
+                        <span asp-validation-for="Password" style="color:red"></span>
+                    </div>
+                    <div class="">
+                        @Html.TextBox("Password", null, "text")
+                    </div>
+                    <div class="">
+                        <input type="submit" name="" value="Войти">
+                    </div>
+                </div>
+            }
+        </div>
+    </body>
+    </html>

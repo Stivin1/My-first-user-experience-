@@ -1,0 +1,6 @@
+{
+  "Id": "57113a40-874c-4cb6-bf1c-cbbd67ca58d9",
+  "UserName": "petja98@bk.ru",
+  "DateOperation": "06.03.2022 13:06:31",
+  "DescriptionOperation": "Авторизация прошла успешно"
+}

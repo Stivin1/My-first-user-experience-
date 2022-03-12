@@ -1,0 +1,6 @@
+{
+  "Id": "29119e00-1ff4-4dbe-889b-83598cf56b7c",
+  "UserName": "UserEntity1@bk.ru",
+  "DateOperation": "12.03.2022 17:01:31",
+  "DescriptionOperation": "Попытка входа пользователя"
+}
